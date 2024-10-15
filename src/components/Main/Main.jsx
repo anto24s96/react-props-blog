@@ -40,16 +40,19 @@ const Main = () => {
             </div>
 
             <div style={cardContainer}>
-                {data.map((p) => (
-                    <Card
-                        key={p.id}
-                        title={p.title}
-                        content={p.content}
-                        tags={p.tags}
-                        published={p.published}
-                        image={p.image}
-                    />
-                ))}
+                {data.map(
+                    (p) =>
+                        p.published === true && (
+                            <Card
+                                key={p.id}
+                                title={p.title}
+                                content={p.content}
+                                tags={p.tags}
+                                published={p.published}
+                                image={p.image}
+                            />
+                        )
+                )}
             </div>
         </main>
     );
